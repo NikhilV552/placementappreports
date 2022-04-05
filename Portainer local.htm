@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html ng-app="portainer" ng-strict-di="" class="ng-scope" lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><style type="text/css">[uib-typeahead-popup].dropdown-menu{display:block;}</style><style type="text/css">.uib-time input{width:50px;}</style><style type="text/css">[uib-tooltip-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-html-popup].tooltip.right-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.top-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-left > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.bottom-right > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.left-bottom > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-top > .tooltip-arrow,[uib-tooltip-template-popup].tooltip.right-bottom > .tooltip-arrow,[uib-popover-popup].popover.top-left > .arrow,[uib-popover-popup].popover.top-right > .arrow,[uib-popover-popup].popover.bottom-left > .arrow,[uib-popover-popup].popover.bottom-right > .arrow,[uib-popover-popup].popover.left-top > .arrow,[uib-popover-popup].popover.left-bottom > .arrow,[uib-popover-popup].popover.right-top > .arrow,[uib-popover-popup].popover.right-bottom > .arrow,[uib-popover-html-popup].popover.top-left > .arrow,[uib-popover-html-popup].popover.top-right > .arrow,[uib-popover-html-popup].popover.bottom-left > .arrow,[uib-popover-html-popup].popover.bottom-right > .arrow,[uib-popover-html-popup].popover.left-top > .arrow,[uib-popover-html-popup].popover.left-bottom > .arrow,[uib-popover-html-popup].popover.right-top > .arrow,[uib-popover-html-popup].popover.right-bottom > .arrow,[uib-popover-template-popup].popover.top-left > .arrow,[uib-popover-template-popup].popover.top-right > .arrow,[uib-popover-template-popup].popover.bottom-left > .arrow,[uib-popover-template-popup].popover.bottom-right > .arrow,[uib-popover-template-popup].popover.left-top > .arrow,[uib-popover-template-popup].popover.left-bottom > .arrow,[uib-popover-template-popup].popover.right-top > .arrow,[uib-popover-template-popup].popover.right-bottom > .arrow{top:auto;bottom:auto;left:auto;right:auto;margin:0;}[uib-popover-popup].popover,[uib-popover-html-popup].popover,[uib-popover-template-popup].popover{display:block !important;}</style><style type="text/css">.uib-datepicker-popup.dropdown-menu{display:block;float:none;margin:0;}.uib-button-bar{padding:10px 9px 2px;}</style><style type="text/css">.uib-position-measure{display:block !important;visibility:hidden !important;position:absolute !important;top:-9999px !important;left:-9999px !important;}.uib-position-scrollbar-measure{position:absolute !important;top:-9999px !important;width:50px !important;height:50px !important;overflow:scroll !important;}.uib-position-body-scrollbar-measure{overflow:scroll !important;}</style><style type="text/css">.uib-datepicker .uib-title{width:100%;}.uib-day button,.uib-month button,.uib-year button{min-width:100%;}.uib-left,.uib-right{width:100%}</style><style type="text/css">.ng-animate.item:not(.left):not(.right){-webkit-transition:0s ease-in-out left;transition:0s ease-in-out left}</style><style>@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style><meta charset="utf-8"><title>Portainer | local</title><meta name="description" content=""><meta name="author" content="Portainer.io"><!-- base href="http://ip172-18-0-78-c96232s33d5g009uu8l0-9000.direct.labs.play-with-docker.com/" --><script type="text/javascript" async="" src="Portainer%20local_files/matomo.js"></script><script>var path = window.location.pathname.replace(/^\/+|\/+$/g, '');
+      var basePath = path ? '/' + path + '/' : '/';
+      document.getElementById('base').href = basePath;</script><!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]--><link rel="apple-touch-icon" sizes="180x180" href="http://ip172-18-0-78-c96232s33d5g009uu8l0-9000.direct.labs.play-with-docker.com/63a301f0574f1a696ce6.png"><link rel="icon" type="image/png" sizes="32x32" href="http://ip172-18-0-78-c96232s33d5g009uu8l0-9000.direct.labs.play-with-docker.com/2dcfc527d067d4ae3424.png"><link rel="icon" type="image/png" sizes="16x16" href="http://ip172-18-0-78-c96232s33d5g009uu8l0-9000.direct.labs.play-with-docker.com/112a479c093f4729251d.png"><link rel="mask-icon" href="http://ip172-18-0-78-c96232s33d5g009uu8l0-9000.direct.labs.play-with-docker.com/7ee8aae1b407ce0e809b.svg" color="#5bbad5"><link rel="shortcut icon" href="data:image/vnd.microsoft.icon;base64,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AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"><meta name="msapplication-config" content="6d50eaeb9f128c130ed9.xml"><meta name="theme-color" content="#ffffff"><script defer="defer" src="Portainer%20local_files/runtime.js"></script><script defer="defer" src="Portainer%20local_files/vendor.js"></script><script defer="defer" src="Portainer%20local_files/main.js"></script><link href="Portainer%20local_files/vendor.css" rel="stylesheet"><link href="Portainer%20local_files/main.css" rel="stylesheet"><style type="text/css">/* Chart.js */
+@-webkit-keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}@keyframes chartjs-render-animation{from{opacity:0.99}to{opacity:1}}.chartjs-render-monitor{-webkit-animation:chartjs-render-animation 0.001s;animation:chartjs-render-animation 0.001s;}</style><style>.button{margin-right:3px;padding:2px;min-width:90px}</style><style>.encoding{margin-left:10px}.encoding label{padding:2px;font-size:15px}.encoding select{padding:2px 0}.reldisabled{opacity:.5}</style><style>.header{background-color:#a9a9a9;padding:5px;font-size:13px}</style><style>.canvas{max-height:90%;max-width:100%}</style><style>*{margin:0;padding:0;box-sizing:border-box}.canvas-container{height:100vh;text-align:center;background-color:#fff}</style></head><body ng-controller="MainController" class="ng-scope"><div id="page-wrapper" ng-class="{
+        open: toggle &amp;&amp; ['portainer.auth', 'portainer.init.admin', 'portainer.init.endpoint'].indexOf($state.current.name) === -1,
+        nopadding: ['portainer.auth', 'portainer.init.admin', 'portainer.init.endpoint', 'portainer.logout'].indexOf($state.current.name) &gt; -1 || applicationState.loading
+      }" class="open"><!-- ngIf: !applicationState.loading --><!-- uiView: sidebar --><div id="sideview" ui-view="sidebar" ng-if="!applicationState.loading" class="ng-scope"><!-- Sidebar -->
+<div id="sidebar-wrapper" class="ng-scope">
+  <div class="sidebar-header">
+    <a ui-sref="portainer.home" data-cy="portainerSidebar-homeImage" href="#!/home">
+      <!-- ngIf: logo -->
+      <!-- ngIf: !logo --><img ng-if="!logo" src="Portainer%20local_files/347aea0738ab6bb73a56.png" class="img-responsive logo ng-scope" alt="Portainer"><!-- end ngIf: !logo -->
+    </a>
+    <a ng-click="toggleSidebar()"><span class="menu-icon glyphicon glyphicon-transfer"></span></a>
+  </div>
+  <div class="sidebar-content">
+    <ul class="sidebar">
+      <sidebar-menu-item path="portainer.home" icon-class="fa-home fa-fw" class-name="sidebar-list" data-cy="portainerSidebar-home" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/home">
+    <ng-transclude>Home</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-home fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+      <!-- ngIf: applicationState.endpoint.name --><li class="sidebar-title endpoint-name ng-binding ng-scope" ng-if="applicationState.endpoint.name">
+        <span class="fa fa-plug space-right"></span>local
+        <!-- ngIf: applicationState.endpoint.mode && applicationState.endpoint.mode.provider === 'KUBERNETES' -->
+      </li><!-- end ngIf: applicationState.endpoint.name -->
+      <!-- ngIf: applicationState.endpoint.mode --><div ng-if="applicationState.endpoint.mode" class="ng-scope">
+        <!-- ngIf: applicationState.endpoint.mode.provider === 'KUBERNETES' -->
+
+        <!-- ngIf: applicationState.endpoint.mode.provider === 'AZURE' -->
+
+        <!-- ngIf: applicationState.endpoint.mode.provider !== 'AZURE' && applicationState.endpoint.mode.provider !== 'KUBERNETES' --><docker-sidebar ng-if="applicationState.endpoint.mode.provider !== 'AZURE' &amp;&amp; applicationState.endpoint.mode.provider !== 'KUBERNETES'" current-route-name="$state.current.name" is-sidebar-open="toggle" show-stacks="showStacks" endpoint-api-version="applicationState.endpoint.apiVersion" swarm-management="applicationState.endpoint.mode.provider === 'DOCKER_SWARM_MODE' &amp;&amp; applicationState.endpoint.mode.role === 'MANAGER'" standalone-management="applicationState.endpoint.mode.provider === 'DOCKER_STANDALONE'" admin-access="isAdmin || isEndpointAdmin" offline-mode="endpointState.OfflineMode" endpoint-id="endpointId" class="ng-scope ng-isolate-scope"><sidebar-menu-item path="docker.dashboard" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-tachometer-alt fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-dashboard" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/dashboard" class="">
+    <ng-transclude>
+  Dashboard
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-tachometer-alt fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+<!-- ngIf: !$ctrl.offlineMode --><sidebar-menu ng-if="!$ctrl.offlineMode" label="App Templates" icon-class="fa-rocket fa-fw" path="docker.templates" path-params="{ endpointId: $ctrl.endpointId }" is-sidebar-open="$ctrl.isSidebarOpen" children-paths="[]" class="ng-scope ng-isolate-scope"><li class="sidebar-list sidebar-menu">
+  <sidebar-menu-item path="docker.templates" path-params="$ctrl.pathParams" icon-class="fa-rocket fa-fw" data-cy="portainerSidebar-App Templates" class="ng-isolate-scope"><li class="sidebar-menu-item" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/templates" class="">
+    <ng-transclude>
+    <div class="sidebar-menu-head ng-binding ng-scope">
+      <button ng-click="$ctrl.onClickArrow($event)" class="small sidebar-menu-indicator">
+        <i class="fas fa-chevron-right" ng-class="$ctrl.isOpen() ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </button>
+      App Templates
+    </div>
+  </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-rocket fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+  <!-- ngIf: $ctrl.isOpen() -->
+</li>
+</sidebar-menu><!-- end ngIf: !$ctrl.offlineMode -->
+
+<!-- ngIf: $ctrl.showStacks --><sidebar-menu-item ng-if="$ctrl.showStacks" path="docker.stacks" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-th-list fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-stacks" class="ng-scope ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/stacks" class="">
+    <ng-transclude>
+  Stacks
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-th-list fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item><!-- end ngIf: $ctrl.showStacks -->
+
+<!-- ngIf: $ctrl.swarmManagement --><sidebar-menu-item ng-if="$ctrl.swarmManagement" path="docker.services" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-list-alt fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-services" class="ng-scope ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/services" class="">
+    <ng-transclude>
+  Services
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-list-alt fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item><!-- end ngIf: $ctrl.swarmManagement -->
+
+<sidebar-menu-item path="docker.containers" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-cubes fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-containers" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/containers">
+    <ng-transclude>
+  Containers
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-cubes fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+<sidebar-menu-item path="docker.images" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-clone fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-images" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/images">
+    <ng-transclude>
+  Images
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-clone fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+<sidebar-menu-item path="docker.networks" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-sitemap fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-networks" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/networks">
+    <ng-transclude>
+  Networks
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-sitemap fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+<sidebar-menu-item path="docker.volumes" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-hdd fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-volumes" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/volumes">
+    <ng-transclude>
+  Volumes
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-hdd fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+<!-- ngIf: $ctrl.endpointApiVersion >= 1.3 && $ctrl.swarmManagement --><sidebar-menu-item ng-if="$ctrl.endpointApiVersion &gt;= 1.3 &amp;&amp; $ctrl.swarmManagement" path="docker.configs" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-file-code fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-configs" class="ng-scope ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/configs">
+    <ng-transclude>
+  Configs
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-file-code fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item><!-- end ngIf: $ctrl.endpointApiVersion >= 1.3 && $ctrl.swarmManagement -->
+
+<!-- ngIf: $ctrl.endpointApiVersion >= 1.25 && $ctrl.swarmManagement --><sidebar-menu-item ng-if="$ctrl.endpointApiVersion &gt;= 1.25 &amp;&amp; $ctrl.swarmManagement" path="docker.secrets" path-params="{ endpointId: $ctrl.endpointId }" icon-class="fa-user-secret fa-fw" class-name="sidebar-list" data-cy="dockerSidebar-secrets" class="ng-scope ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/secrets">
+    <ng-transclude>
+  Secrets
+</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-user-secret fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item><!-- end ngIf: $ctrl.endpointApiVersion >= 1.25 && $ctrl.swarmManagement -->
+
+<!-- ngIf: $ctrl.standaloneManagement && $ctrl.adminAccess && !$ctrl.offlineMode -->
+
+<!-- ngIf: $ctrl.standaloneManagement -->
+
+<!-- ngIf: $ctrl.swarmManagement --><sidebar-menu ng-if="$ctrl.swarmManagement" label="Swarm" icon-class="fa-object-group fa-fw" path="docker.swarm" path-params="{ endpointId: $ctrl.endpointId }" is-sidebar-open="$ctrl.isSidebarOpen" children-paths="['docker.registries', 'docker.registries.access', 'docker.featuresConfiguration']" class="ng-scope ng-isolate-scope"><li class="sidebar-list sidebar-menu">
+  <sidebar-menu-item path="docker.swarm" path-params="$ctrl.pathParams" icon-class="fa-object-group fa-fw" data-cy="portainerSidebar-Swarm" class="ng-isolate-scope"><li class="sidebar-menu-item" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/swarm" class="active">
+    <ng-transclude>
+    <div class="sidebar-menu-head ng-binding ng-scope">
+      <button ng-click="$ctrl.onClickArrow($event)" class="small sidebar-menu-indicator">
+        <i class="fas fa-chevron-down" ng-class="$ctrl.isOpen() ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </button>
+      Swarm
+    </div>
+  </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-object-group fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+  <!-- ngIf: $ctrl.isOpen() --><div class="sidebar-list-items ng-scope" ng-if="$ctrl.isOpen()">
+    <ng-transclude>
+  <!-- ngIf: $ctrl.adminAccess --><div ng-if="$ctrl.adminAccess" class="ng-scope">
+    <sidebar-menu-item authorization="PortainerEndpointUpdateSettings" path="docker.featuresConfiguration" path-params="{ endpointId: $ctrl.endpointId }" class-name="sidebar-sublist" data-cy="swarmSidebar-setup" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-sublist" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/feat-config">
+    <ng-transclude>
+      Setup
+    </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+    <sidebar-menu-item authorization="PortainerRegistryList" path="docker.registries" path-params="{ endpointId: $ctrl.endpointId }" class-name="sidebar-sublist" data-cy="swarmSidebar-registries" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-sublist" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/2/docker/registries">
+    <ng-transclude>
+      Registries
+    </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+  </div><!-- end ngIf: $ctrl.adminAccess -->
+</ng-transclude>
+  </div><!-- end ngIf: $ctrl.isOpen() -->
+</li>
+</sidebar-menu><!-- end ngIf: $ctrl.swarmManagement -->
+</docker-sidebar><!-- end ngIf: applicationState.endpoint.mode.provider !== 'AZURE' && applicationState.endpoint.mode.provider !== 'KUBERNETES' -->
+      </div><!-- end ngIf: applicationState.endpoint.mode -->
+
+      <!-- ngIf: applicationState.endpoint.mode && applicationState.endpoint.extensions.length > 0 -->
+
+      <!-- ngIf: isAdmin && applicationState.application.enableEdgeComputeFeatures -->
+
+      <!-- ngIf: isAdmin || isTeamLeader --><sidebar-section ng-if="isAdmin || isTeamLeader" title="Settings" class="ng-scope ng-isolate-scope"><div class="sidebar-section">
+  <li class="sidebar-title">
+    <span class="ng-binding">Settings</span>
+  </li>
+
+  <div class="sidebar-section-items" ng-transclude="">
+        <sidebar-menu icon-class="fa-users fa-fw" label="Users" path="portainer.users" is-sidebar-open="toggle" children-paths="['portainer.users.user' ,'portainer.teams' ,'portainer.teams.team' ,'portainer.roles' ,'portainer.roles.role' ,'portainer.roles.new']" class="ng-scope ng-isolate-scope"><li class="sidebar-list sidebar-menu">
+  <sidebar-menu-item path="portainer.users" path-params="$ctrl.pathParams" icon-class="fa-users fa-fw" data-cy="portainerSidebar-Users" class="ng-isolate-scope"><li class="sidebar-menu-item" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/users">
+    <ng-transclude>
+    <div class="sidebar-menu-head ng-binding ng-scope">
+      <button ng-click="$ctrl.onClickArrow($event)" class="small sidebar-menu-indicator">
+        <i class="fas fa-chevron-right" ng-class="$ctrl.isOpen() ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </button>
+      Users
+    </div>
+  </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-users fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+  <!-- ngIf: $ctrl.isOpen() -->
+</li>
+</sidebar-menu>
+
+        <!-- ngIf: isAdmin --><div ng-if="isAdmin" class="ng-scope">
+          <sidebar-menu icon-class="fa-plug fa-fw" label="Environments" path="portainer.endpoints" is-sidebar-open="toggle" children-paths="['portainer.endpoints.endpoint', 'portainer.endpoints.new', 'portainer.endpoints.endpoint.access', 'portainer.groups', 'portainer.groups.group', 'portainer.groups.group.access', 'portainer.groups.new', 'portainer.tags']" class="ng-isolate-scope"><li class="sidebar-list sidebar-menu">
+  <sidebar-menu-item path="portainer.endpoints" path-params="$ctrl.pathParams" icon-class="fa-plug fa-fw" data-cy="portainerSidebar-Environments" class="ng-isolate-scope"><li class="sidebar-menu-item" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/endpoints" class="">
+    <ng-transclude>
+    <div class="sidebar-menu-head ng-binding ng-scope">
+      <button ng-click="$ctrl.onClickArrow($event)" class="small sidebar-menu-indicator">
+        <i class="fas fa-chevron-right" ng-class="$ctrl.isOpen() ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </button>
+      Environments
+    </div>
+  </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-plug fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+  <!-- ngIf: $ctrl.isOpen() -->
+</li>
+</sidebar-menu>
+
+          <sidebar-menu-item path="portainer.registries" icon-class="fa-database fa-fw" class-name="sidebar-list" data-cy="portainerSidebar-registries" class="ng-isolate-scope"><li class="sidebar-menu-item sidebar-list" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/registries">
+    <ng-transclude>
+            Registries</ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-database fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+          <sidebar-menu label="Authentication logs" icon-class="fa-history fa-fw" path="portainer.authLogs" is-sidebar-open="toggle" children-paths="['portainer.activityLogs']" class="ng-isolate-scope"><li class="sidebar-list sidebar-menu">
+  <sidebar-menu-item path="portainer.authLogs" path-params="$ctrl.pathParams" icon-class="fa-history fa-fw" data-cy="portainerSidebar-Authentication logs" class="ng-isolate-scope"><li class="sidebar-menu-item" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/auth-logs">
+    <ng-transclude>
+    <div class="sidebar-menu-head ng-binding ng-scope">
+      <button ng-click="$ctrl.onClickArrow($event)" class="small sidebar-menu-indicator">
+        <i class="fas fa-chevron-right" ng-class="$ctrl.isOpen() ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </button>
+      Authentication logs
+    </div>
+  </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-history fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+  <!-- ngIf: $ctrl.isOpen() -->
+</li>
+</sidebar-menu>
+
+          <sidebar-menu label="Settings" icon-class="fa-cogs fa-fw" path="portainer.settings" is-sidebar-open="toggle" children-paths="['portainer.settings.authentication', 'portainer.settings.edgeCompute']" class="ng-isolate-scope"><li class="sidebar-list sidebar-menu">
+  <sidebar-menu-item path="portainer.settings" path-params="$ctrl.pathParams" icon-class="fa-cogs fa-fw" data-cy="portainerSidebar-Settings" class="ng-isolate-scope"><li class="sidebar-menu-item" ng-class="$ctrl.className">
+  <a ui-state="$ctrl.path" ui-state-params="$ctrl.pathParams" ui-sref-active="active" href="#!/settings" class="">
+    <ng-transclude>
+    <div class="sidebar-menu-head ng-binding ng-scope">
+      <button ng-click="$ctrl.onClickArrow($event)" class="small sidebar-menu-indicator">
+        <i class="fas fa-chevron-right" ng-class="$ctrl.isOpen() ? 'fa-chevron-down' : 'fa-chevron-right'"></i>
+      </button>
+      Settings
+    </div>
+  </ng-transclude>
+    <!-- ngIf: $ctrl.iconClass --><span ng-if="$ctrl.iconClass" class="menu-icon fa ng-scope fa-cogs fa-fw" ng-class="$ctrl.iconClass"></span><!-- end ngIf: $ctrl.iconClass -->
+  </a>
+</li>
+</sidebar-menu-item>
+
+  <!-- ngIf: $ctrl.isOpen() -->
+</li>
+</sidebar-menu>
+        </div><!-- end ngIf: isAdmin -->
+      </div>
+</div>
+</sidebar-section><!-- end ngIf: isAdmin || isTeamLeader -->
+    </ul>
+    <div class="sidebar-footer-content">
+      <!-- ngIf: applicationState.application.versionStatus.UpdateAvailable -->
+      <div>
+        <img src="Portainer%20local_files/47026671f2ebb0d50945.png" class="img-responsive logo" alt="Portainer">
+        <span class="version ng-binding" data-cy="portainerSidebar-versionNumber">2.11.1</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Sidebar -->
+</div><!-- end ngIf: !applicationState.loading --><div id="content-wrapper"><div class="page-content"><!-- ngIf: applicationState.loading --><!-- ngIf: !applicationState.loading --><!-- uiView: content --><div id="view" ui-view="content" ng-if="!applicationState.loading" class="ng-scope"><rd-header class="ng-scope ng-isolate-scope"><div class="row header">
+  <div id="loadingbar-placeholder"></div>
+  <div class="col-xs-12"> <div class="meta" ng-transclude="">
+  <rd-header-title title-text="Swarm visualizer" class="ng-scope ng-isolate-scope"><div class="page white-space-normal ng-binding">
+  Swarm visualizer
+  <span class="header_title_content" ng-transclude="">
+    <a data-toggle="tooltip" title="Refresh" ui-sref="docker.swarm.visualizer" ui-sref-opts="{reload: true}" class="ng-scope" href="#!/2/docker/swarm/visualizer">
+      <i class="fa fa-sync" aria-hidden="true"></i>
+    </a>
+  </span>
+  <!-- ngIf: $ctrl.username --><span class="pull-right user-box ng-binding ng-scope" ng-if="$ctrl.username"> <i class="fa fa-user-circle" aria-hidden="true"></i> admin </span><!-- end ngIf: $ctrl.username -->
+</div>
+</rd-header-title>
+  <rd-header-content class="ng-scope ng-isolate-scope"><div class="breadcrumb-links">
+  <div class="pull-left" ng-transclude=""> <a ui-sref="docker.swarm" class="ng-scope" href="#!/2/docker/swarm">Swarm</a> &gt; <a ui-sref="docker.swarm.visualizer" class="ng-scope" href="#!/2/docker/swarm/visualizer">Cluster visualizer</a> </div>
+  <!-- ngIf: $ctrl.username --><div class="pull-right ng-scope" ng-if="$ctrl.username">
+    <a ui-sref="portainer.account" style="margin-right: 5px" href="#!/account">
+      <u><i class="fa fa-wrench" aria-hidden="true"></i> my account </u>
+    </a>
+    <a ui-sref="portainer.logout({performApiLogout: true})" class="text-danger" style="margin-right: 25px" data-cy="template-logoutButton" href="#!/logout">
+      <u><i class="fa fa-sign-out-alt" aria-hidden="true"></i> log out</u>
+    </a>
+  </div><!-- end ngIf: $ctrl.username -->
+</div>
+</rd-header-content>
+</div></div>
+</div>
+</rd-header>
+
+<div class="row ng-scope">
+  <div class="col-sm-12">
+    <rd-widget class="ng-isolate-scope"><div class="widget" ng-transclude="">
+      <rd-widget-header icon="fa-object-group" title-text="Cluster information" class="ng-scope ng-isolate-scope">
+    <div class="widget-header">
+      <div class="row">
+        <span ng-class="$ctrl.classes" class="pull-left">
+          <i class="fa fa-object-group" ng-class="$ctrl.icon"></i>
+          <span ng-transclude="title" class="ng-binding">Cluster information</span>
+        </span>
+        <span ng-class="$ctrl.classes" class="pull-right" ng-transclude="">
+        <div class="pull-right ng-scope">
+          <!-- ngIf: !state.ShowInformationPanel -->
+          <!-- ngIf: state.ShowInformationPanel --><button type="button" class="btn btn-sm btn-primary ng-scope" ng-click="changeShowInformationPanel(false)" ng-if="state.ShowInformationPanel">Hide</button><!-- end ngIf: state.ShowInformationPanel -->
+        </div>
+      </span>
+      </div>
+    </div>
+</rd-widget-header>
+      <!-- ngIf: state.ShowInformationPanel --><rd-widget-body ng-if="state.ShowInformationPanel" class="ng-scope ng-isolate-scope">
+    <div class="widget-body" ng-class="$ctrl.classes">
+      <rd-loading ng-show="$ctrl.loading" class="ng-isolate-scope ng-hide"><div class="loading"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></rd-loading>
+      <div ng-hide="$ctrl.loading" class="widget-content" ng-transclude="">
+        <table class="table ng-scope">
+          <tbody>
+            <tr>
+              <td>Nodes</td>
+              <td class="ng-binding">2</td>
+            </tr>
+            <tr>
+              <td>Services</td>
+              <td class="ng-binding">7</td>
+            </tr>
+            <tr>
+              <td>Tasks</td>
+              <td class="ng-binding">11</td>
+            </tr>
+          </tbody>
+        </table>
+        <form class="form-horizontal ng-pristine ng-valid ng-scope">
+          <div class="col-sm-12 form-section-title"> Options </div>
+          <div class="form-group">
+            <div class="col-sm-12">
+              <label class="control-label text-left"> Only display running tasks </label>
+              <label class="switch" style="margin-left: 20px">
+                <input type="checkbox" ng-model="state.DisplayOnlyRunningTasks" ng-change="changeDisplayOnlyRunningTasks()" class="ng-pristine ng-untouched ng-valid ng-empty"><i></i>
+              </label>
+            </div>
+            <div class="col-sm-12">
+              <label class="control-label text-left"> Display node labels </label>
+              <label class="switch" style="margin-left: 20px"> <input type="checkbox" ng-model="state.DisplayNodeLabels" ng-change="changeDisplayNodeLabels()" class="ng-pristine ng-untouched ng-valid ng-empty"><i></i> </label>
+            </div>
+          </div>
+        </form>
+        <form class="form-horizontal ng-pristine ng-valid ng-scope">
+          <div class="col-sm-12 form-section-title"> Refresh </div>
+          <div class="form-group">
+            <label for="refreshRate" class="col-sm-1 margin-sm-top control-label text-left">
+              Rate
+              <i id="refreshRateChange" class="fa fa-check green-icon" aria-hidden="true" style="display: none"></i>
+            </label>
+            <div class="col-sm-2">
+              <select id="refreshRate" ng-model="state.refreshRate" ng-change="changeUpdateRepeater()" class="form-control ng-pristine ng-untouched ng-valid ng-not-empty">
+                <option value="5" selected="selected">5s</option>
+                <option value="10">10s</option>
+                <option value="30">30s</option>
+                <option value="60">60s</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </rd-widget-body><!-- end ngIf: state.ShowInformationPanel -->
+    </div></rd-widget>
+  </div>
+</div>
+
+<!-- ngIf: visualizerData --><div class="row ng-scope" ng-if="visualizerData">
+  <div class="col-sm-12">
+    <rd-widget class="ng-isolate-scope"><div class="widget" ng-transclude="">
+      <rd-widget-header icon="fa-object-group" title-text="Cluster visualizer" class="ng-scope ng-isolate-scope">
+    <div class="widget-header">
+      <div class="row">
+        <span ng-class="$ctrl.classes" class="pull-left">
+          <i class="fa fa-object-group" ng-class="$ctrl.icon"></i>
+          <span ng-transclude="title" class="ng-binding">Cluster visualizer</span>
+        </span>
+        <span ng-class="$ctrl.classes" class="pull-right" ng-transclude=""></span>
+      </div>
+    </div>
+</rd-widget-header>
+      <rd-widget-body class="ng-scope ng-isolate-scope">
+    <div class="widget-body" ng-class="$ctrl.classes">
+      <rd-loading ng-show="$ctrl.loading" class="ng-isolate-scope ng-hide"><div class="loading"><div class="double-bounce1"></div><div class="double-bounce2"></div></div></rd-loading>
+      <div ng-hide="$ctrl.loading" class="widget-content" ng-transclude="">
+        <div class="visualizer_container ng-scope">
+          <!-- ngRepeat: node in visualizerData.nodes | orderBy : ['Role', 'Hostname'] track by $index --><div class="node ng-scope" ng-repeat="node in visualizerData.nodes | orderBy : ['Role', 'Hostname'] track by $index">
+            <div class="node_info">
+              <div>
+                <div>
+                  <b class="ng-binding">node1</b>
+                  <span class="node_platform">
+                    <!-- ngIf: node.PlatformOS === 'linux' --><i class="fab fa-linux ng-scope" aria-hidden="true" ng-if="node.PlatformOS === 'linux'"></i><!-- end ngIf: node.PlatformOS === 'linux' -->
+                    <!-- ngIf: node.PlatformOS === 'windows' -->
+                  </span>
+                </div>
+              </div>
+              <div class="ng-binding">manager</div>
+              <div class="ng-binding">CPU: 8</div>
+              <div class="ng-binding">Memory: 33.74 GB</div>
+              <div><span class="label label-success">ready</span></div>
+              <!-- ngIf: node.Labels.length > 0 && state.DisplayNodeLabels -->
+            </div>
+            <div class="tasks">
+              <!-- ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_stopped" style="border: 2px solid #9229da" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-api-gateway</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-placement-api-gateway:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: shutdown</div>
+                <div class="ng-binding">Update: 2022-04-05 16:47:02</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #9229da" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-api-gateway</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-placement-api-gateway:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:47:04</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #aea333" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-config-server</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-placement-config-server:0.0.1-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:39:15</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_stopped" style="border: 2px solid #23c27b" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-media-server</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-media-service:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: shutdown</div>
+                <div class="ng-binding">Update: 2022-04-05 16:48:21</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #d77d8a" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-naming-server</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-placement-naming-server:0.0.1-snapshot</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:35:50</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #191b05" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-placement-server</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-placement-service:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:42:10</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #58698f" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-student-admin-server</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-student-admin-service:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:41:18</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } -->
+            </div>
+          </div><!-- end ngRepeat: node in visualizerData.nodes | orderBy : ['Role', 'Hostname'] track by $index --><div class="node ng-scope" ng-repeat="node in visualizerData.nodes | orderBy : ['Role', 'Hostname'] track by $index">
+            <div class="node_info">
+              <div>
+                <div>
+                  <b class="ng-binding">node2</b>
+                  <span class="node_platform">
+                    <!-- ngIf: node.PlatformOS === 'linux' --><i class="fab fa-linux ng-scope" aria-hidden="true" ng-if="node.PlatformOS === 'linux'"></i><!-- end ngIf: node.PlatformOS === 'linux' -->
+                    <!-- ngIf: node.PlatformOS === 'windows' -->
+                  </span>
+                </div>
+              </div>
+              <div class="ng-binding">worker</div>
+              <div class="ng-binding">CPU: 8</div>
+              <div class="ng-binding">Memory: 33.74 GB</div>
+              <div><span class="label label-success">ready</span></div>
+              <!-- ngIf: node.Labels.length > 0 && state.DisplayNodeLabels -->
+            </div>
+            <div class="tasks">
+              <!-- ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #9229da" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-api-gateway</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-placement-api-gateway:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:47:06</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_stopped" style="border: 2px solid #85d8c8" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-distributed-tracing</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-distributed-tracing-server:0.0.1-SNAPSHOT</div>
+                <div class="ng-binding">Status: failed</div>
+                <div class="ng-binding">Update: 2022-04-05 16:46:20</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #85d8c8" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-distributed-tracing</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-distributed-tracing-server:0.0.1-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:46:27</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } --><div class="task task_running" style="border: 2px solid #23c27b" ng-repeat="task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') &amp;&amp; { Status: { State: 'running' } }">
+                <div class="service_name ng-binding">placement-media-server</div>
+                <div class="ng-binding">Image: ghcr.io/nikhilv552/placement-config-files/placement-app-media-service:1.0.6-SNAPSHOT</div>
+                <div class="ng-binding">Status: running</div>
+                <div class="ng-binding">Update: 2022-04-05 16:48:25</div>
+                <!-- ngIf: task.Spec.Resources.Limits.MemoryBytes -->
+                <!-- ngIf: task.Spec.Resources.Limits.NanoCPUs -->
+              </div><!-- end ngRepeat: task in node.Tasks | orderBy: 'ServiceName' | filter: (state.DisplayOnlyRunningTasks || '') && { Status: { State: 'running' } } -->
+            </div>
+          </div><!-- end ngRepeat: node in visualizerData.nodes | orderBy : ['Role', 'Hostname'] track by $index -->
+        </div>
+      </div>
+    </div>
+  </rd-widget-body>
+    </div></rd-widget>
+  </div>
+</div><!-- end ngIf: visualizerData -->
+</div><!-- end ngIf: !applicationState.loading --></div></div></div></body></html>
